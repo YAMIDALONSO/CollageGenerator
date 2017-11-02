@@ -3,6 +3,7 @@ package views;
 import java.awt.BorderLayout;
 import java.util.ArrayList;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import models.Photo;
 
 public class JPanelPhotos extends JPanel {
@@ -18,9 +19,11 @@ public class JPanelPhotos extends JPanel {
     }
 
     public void refreshImage(ArrayList<Photo> photolist) {
+        JScrollPane jsp = new JScrollPane();
         panelList.refreshPhoto(photolist);
         panelImagelist.addPhotoToPanel(photolist);
-        add(panelImagelist,BorderLayout.PAGE_END);
+        jsp.setViewportView(panelImagelist);
+        add(jsp,BorderLayout.CENTER);
     }
 
     public Photo getSelectedPhoto() {
