@@ -68,4 +68,8 @@ public class Window extends JFrame {
         panelCollage.generateCollage(photoList);
         revalidate();
     }
+
+    public void save() {
+        panelCollage.save();
+    }
 }

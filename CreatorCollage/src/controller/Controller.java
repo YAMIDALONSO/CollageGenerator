@@ -33,6 +33,9 @@ public class Controller implements ActionListener {
             case GENERATE:
                 generateCollage(collageGenerator.getPhotoList());
                 break;
+            case SAVE:
+                save();
+                break;
         }
     }
 
@@ -54,5 +57,9 @@ public class Controller implements ActionListener {
 
     private void generateCollage(ArrayList<Photo> photoList) {
         window.generateCollage(photoList);
+    }
+
+    private void save() {
+        window.save();
     }
 }
